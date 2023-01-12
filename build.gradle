@@ -60,7 +60,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 //	jasypt의존성 주입
-	implementation group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '3.0.3'
+//	implementation group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '3.0.3'
 
 
 }
