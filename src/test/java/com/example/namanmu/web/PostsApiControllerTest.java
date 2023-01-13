@@ -6,9 +6,9 @@
 //import com.example.namanmu.web.dto.PostsSaveRequestDto;
 //import com.example.namanmu.web.dto.PostsUpdateRequestDto;
 //import com.fasterxml.jackson.databind.ObjectMapper;
-//import org.junit.After;
-//import org.junit.Before;
-//import org.junit.Test;
+//import org.junit.jupiter.api.AfterEach;
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.Test;
 //import org.junit.jupiter.api.extension.ExtendWith;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;
@@ -49,7 +49,7 @@
 //
 ////    private MockMvc mvc;
 //
-////    @Before
+////    @BeforeEach
 ////    public void setup() {
 ////        mvc = MockMvcBuilders
 ////                .webAppContextSetup(context)
@@ -57,7 +57,7 @@
 ////                .build();
 ////    }
 //
-//    @After
+//    @AfterEach
 //    public void tearDown() throws Exception {
 //        postsRepository.deleteAll();
 //    }

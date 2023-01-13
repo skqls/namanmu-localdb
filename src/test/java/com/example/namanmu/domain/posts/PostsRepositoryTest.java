@@ -1,7 +1,7 @@
 //package com.example.namanmu.domain.posts;
 //
 //import org.junit.jupiter.api.AfterEach;
-//import org.junit.Test;
+//import org.junit.jupiter.api.Test;
 //import org.junit.jupiter.api.AfterEach;
 //import org.junit.jupiter.api.extension.ExtendWith;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@
 //    @Autowired
 //    PostsRepository postsRepository;
 //
-//    @AfterEach
+//    @AfterEachEach
 //    public void cleanup() {
 //        postsRepository.deleteAll();
 //    }

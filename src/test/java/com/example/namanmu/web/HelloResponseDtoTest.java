@@ -1,7 +1,7 @@
 //package com.example.namanmu.web;
 //
 //import com.example.namanmu.web.dto.HelloResponseDto;
-//import org.junit.Test;
+//import org.junit.jupiter.api.Test;
 //
 //import static org.assertj.core.api.Assertions.assertThat;
 //
