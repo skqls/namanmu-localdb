@@ -41,6 +41,7 @@ application-oauth.properties
 application.properties
 application-real-oauth.properties
 
+dump.rdb
 
 
 
