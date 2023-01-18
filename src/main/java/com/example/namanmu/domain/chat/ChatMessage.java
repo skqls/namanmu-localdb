@@ -2,20 +2,14 @@
 //
 //import lombok.Getter;
 //import lombok.Setter;
-//@Setter
-//@Getter
-//public class ChatMessage {
-//    private MessageType type;
+//
+//@Getter @Setter
+//public class Message {
 //    private String content;
 //    private String sender;
-//    private String roomId;
-//    private String username;
-//
+//    private MessageType type;
 //
 //    public enum MessageType {
-//        CHAT,
-//        JOIN,
-//        LEAVE
-//    }
-//
+//        CHAT, LEAVE, JOIN
+//    };
 //}

@@ -6,12 +6,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @NoArgsConstructor
 @Table(name= "user")
 @Entity
-public class User extends BaseTimeEntity {
+
+//캐쉬를 위해서...
+//public class User extends BaseTimeEntity implements Serializable {
+
+public class User extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
