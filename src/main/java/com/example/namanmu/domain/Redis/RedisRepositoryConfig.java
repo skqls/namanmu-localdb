@@ -3,6 +3,7 @@ package com.example.namanmu.domain.Redis;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
@@ -16,6 +17,7 @@ import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @RequiredArgsConstructor
+@EnableCaching
 @Configuration
 @EnableRedisRepositories
 public class RedisRepositoryConfig {
@@ -43,19 +45,19 @@ public class RedisRepositoryConfig {
 
 
 
-    @Bean
-    public CacheManager redisCacheManager() {
-        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
-                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
-                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
-
-        RedisCacheManager redisCacheManager = RedisCacheManager.RedisCacheManagerBuilder
-                .fromConnectionFactory(redisConnectionFactory())
-                .cacheDefaults(redisCacheConfiguration)
-                .build();
-
-        return redisCacheManager;
-    }
+//    @Bean
+//    public CacheManager redisCacheManager() {
+//        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
+//                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+//                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
+//
+//        RedisCacheManager redisCacheManager = RedisCacheManager.RedisCacheManagerBuilder
+//                .fromConnectionFactory(redisConnectionFactory())
+//                .cacheDefaults(redisCacheConfiguration)
+//                .build();
+//
+//        return redisCacheManager;
+//    }
 
 }
 
