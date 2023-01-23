@@ -3,6 +3,7 @@
 
 package com.example.namanmu.domain.user;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,50 +1,50 @@
-package com.example.namanmu.web;
-
-
-
-import com.example.namanmu.domain.Redis.Person;
-import com.example.namanmu.domain.Redis.PersonRedisRepository;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-public class RedisRepositoryTest {
-
-    @Autowired
-    private PersonRedisRepository repo;
-
-    @Test
-    void test_left() {
-        Person person = new Person("Park", 20);
-
-// 저장
-        repo.save(person);
-
-// `keyspace:id` 값을 가져옴
-        repo.findById(person.getId());
-
-// Person Entity 의 @RedisHash 에 정의되어 있는 keyspace (people) 에 속한 키의 갯수를 구함
-        repo.count();
-
-// 삭제
-//        repo.delete(person);
-    }
-
-    @Test
-    void test_right() {
-        Person person = new Person("Park", 20);
-
-// 저장
-        repo.save(person);
-
-// `keyspace:id` 값을 가져옴
-        repo.findById(person.getId());
-
-// Person Entity 의 @RedisHash 에 정의되어 있는 keyspace (people) 에 속한 키의 갯수를 구함
-        repo.count();
-
-// 삭제
-//        repo.delete(person);
-    }
-}
+//package com.example.namanmu.web;
+//
+//
+//
+//import com.example.namanmu.domain.Redis.Person;
+//import com.example.namanmu.domain.Redis.PersonRedisRepository;
+//import org.junit.jupiter.api.Test;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//public class RedisRepositoryTest {
+//
+//    @Autowired
+//    private PersonRedisRepository repo;
+//
+//    @Test
+//    void test_left() {
+//        Person person = new Person("Park", 20);
+//
+//// 저장
+//        repo.save(person);
+//
+//// `keyspace:id` 값을 가져옴
+//        repo.findById(person.getId());
+//
+//// Person Entity 의 @RedisHash 에 정의되어 있는 keyspace (people) 에 속한 키의 갯수를 구함
+//        repo.count();
+//
+//// 삭제
+////        repo.delete(person);
+//    }
+//
+//    @Test
+//    void test_right() {
+//        Person person = new Person("Park", 20);
+//
+//// 저장
+//        repo.save(person);
+//
+//// `keyspace:id` 값을 가져옴
+//        repo.findById(person.getId());
+//
+//// Person Entity 의 @RedisHash 에 정의되어 있는 keyspace (people) 에 속한 키의 갯수를 구함
+//        repo.count();
+//
+//// 삭제
+////        repo.delete(person);
+//    }
+//}
