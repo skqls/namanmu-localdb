@@ -55,5 +55,22 @@ public class User extends BaseTimeEntity{
     }
 }
 
-
-
+//    private void joinUserMakeRanking(User joinUser) {
+//        // Try to find an existing ranking for the user
+//        Ranking joinUserRanking = rankingRepository.findByUser(joinUser);
+//
+//        if (joinUserRanking == null) {
+//            // Create a new ranking if it doesn't exist
+//            joinUserRanking = Ranking.builder()
+//                    .user(joinUser)
+//                    .currentWinNums(0)
+//                    .bestWinNums(0)
+//                    .build();
+//        } else {
+//            // Update the existing ranking
+//            joinUserRanking.setCurrentWinNums(joinUserRanking.getCurrentWinNums() + 1);
+//            joinUserRanking.setBestWinNums(Math.max(joinUserRanking.getBestWinNums(), joinUserRanking.getCurrentWinNums()));
+//        }
+//        rankingRepository.save(joinUserRanking);
+//    }
+//
