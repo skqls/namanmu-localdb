@@ -53,7 +53,7 @@ public class RedisConfig {
 
 
     @Bean
-    public CacheManager redisCacheManager(RedisConnectionFactory redisConnectionFactory){
+    public CacheManager redisCacheManager(RedisConnectionFactory redisConnectionFactory) {
         RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig()
                 .disableCachingNullValues()
                 .entryTtl(Duration.ofSeconds(CacheKey.DEFAULT_EXPIRE_SEC))
@@ -67,51 +67,9 @@ public class RedisConfig {
                         .fromSerializer(new GenericJackson2JsonRedisSerializer()));
 
 
-//        // Cache 의 Key 별로 (Ex. "zone" , 각각 유효시간 설정하는 방법 ..
-//        Map<String, RedisCacheConfiguration> cacheConfiguration = new HashMap<>();
-//        cacheConfiguration.put(CacheKey.ZONE,RedisCacheConfiguration.defaultCacheConfig()
-//                .entryTtl(Duration.ofSeconds(CacheKey.ZONE_EXPIRE_SEC)));
-//
-//        return RedisCacheManager.RedisCacheManagerBuilder
-//                .fromConnectionFactory(redisConnectionFactory)
-//                .cacheDefaults(configuration)
-//                .withInitialCacheConfigurations(cacheConfiguration)
-//                .build();
-
-        RedisCacheManager redisCacheManager = RedisCacheManager
-                .RedisCacheManagerBuilder
-                .fromConnectionFactory(redisConnectionFactory)
-                .cacheDefaults(configuration)
-                .build();
+        RedisCacheManager redisCacheManager = RedisCacheManager.RedisCacheManagerBuilder.fromConnectionFactory(redisConnectionFactory).cacheDefaults(configuration).build();
         return redisCacheManager;
     }
-
-
-
-
-//    @Bean
-//    public CacheManager redisCacheManager() {
-//        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
-//                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
-//                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
-//
-//        RedisCacheManager redisCacheManager = RedisCacheManager.RedisCacheManagerBuilder
-//                .fromConnectionFactory(redisConnectionFactory())
-//                .cacheDefaults(redisCacheConfiguration)
-//                .build();
-//
-//        return redisCacheManager;
-//    }
-
-//    @Bean
-//    public CacheManager testCacheManager(RedisConnectionFactory cf) {
-//        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
-//                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
-//                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()))
-//                .entryTtl(Duration.ofMinutes(3L));
-//
-//        return RedisCacheManager.RedisCacheManagerBuilder.fromConnectionFactory(cf).cacheDefaults(redisCacheConfiguration).build();
-//    }
 
 }
 
