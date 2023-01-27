@@ -73,6 +73,11 @@ dependencies {
 	implementation 'org.springframework.session:spring-session-data-redis'
 
 
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.2.1'
+
+
+
+
 
 }
 
